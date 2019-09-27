@@ -1,0 +1,17 @@
+# GIMP user context
+
+(tool "gimp-crop-tool")
+(paint-info "gimp-paintbrush")
+(foreground (color-rgb 0.662745 0.725490 0.674510))
+(background (color-rgb 0.041464 0.388250 0.561644))
+(opacity 0.990000)
+(brush "2. Hardness 100")
+(dynamics "Dynamics Off")
+(mybrush "100% Opaque")
+(pattern "Pine")
+(gradient "FG to BG (RGB)")
+(palette "Color History")
+(font "Source Han Sans SC Heavy")
+(tool-preset "Core Pointer")
+
+# end of user context

@@ -1,0 +1,423 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #222ff
+background-alt = #444
+;foreground = ${xrdb:color7:#222}
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/crimson]
+;monitor = LVDS-1
+width = 100%
+height = 23
+;offset-x = 10%
+;offset-y = 5%
+radius = 2.0
+fixed-center = true
+
+background = #2f343f
+foreground = #EFF0EB
+;border-bottom-size = 2
+border-top-size=1
+border-top-color = #00adfe
+;border-bottom-color = #00adfe
+bottom = true
+
+line-size = 5
+line-color = #f00
+
+border-size = 0
+;border-color = #fff
+
+padding-left = 2
+padding-right = 2
+
+module-margin-left = 2
+module-margin-right = 2
+
+;font-1 = FontAwesome4Free:style=Solid:pixelsize=5:antialias=false;3
+;font-2 = FontAwesome4Brands:style=Solid:pixelsize=5:antialias=false;3
+;font-0 = monaco:pixelsize=9;1
+font-0 = Ubuntu Nerd Font Mono:fontformat=Regular:size=10;2
+font-1 = FontAwesome:pixelsize=10;2
+;font-2 = siji:pixelsize=10;1
+
+modules-left = i3
+modules-center = menu-apps
+modules-right = battery wlan eth date
+
+tray-position = right
+tray-padding = 5
+;tray-transparent = true
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/scrot]
+type = custom/text
+;content-underline = #4D8FAC
+content = ""
+;content-foreground = ${colors.secondary}
+; need into /etc/sudoers line bellow to work
+; username ALL=(ALL) NOPASSWD: /bin/systemctl restart tor
+click-left = "scrot"
+
+[module/battery]
+content-underline = #4D8FAC
+type = internal/battery
+time-format = %H:%M
+full-at = 100
+battery = BAT0
+adapter = ADP1
+poll-interval = 5
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+label-charging = %percentage%%
+label-discharging =�%percentage%%
+label-full = Fully charged
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+[module/lock]
+type = custom/text
+content = ""
+click-left = " ~/.config/i3/lock.sh"
+
+[module/poweroff]
+type = custom/text
+content = ""
+click-left = "systemctl poweroff"
+
+[module/reboot]
+type = custom/text
+content = "ﰇ"
+click-left = "systemctl reboot"
+
+[module/sleep]
+type = custom/text
+content = "鈴"
+click-left = "systemctl suspend"
+
+[module/menu-apps]
+type = custom/menu
+
+; If true, <label-toggle> will be to the left of the menu items (default).
+; If false, it will be on the right of all the items.
+expand-right = true
+
+; "menu-LEVEL-N" has the same properties as "label-NAME" with
+; the additional "exec" property
+;
+; Available exec commands:
+;   menu-open-LEVEL
+;   menu-close
+; Other commands will be executed using "/usr/bin/env sh -c $COMMAND"
+
+
+menu-0-0 =
+menu-0-0-exec = chromium &
+menu-0-1 =
+menu-0-1-exec = nautilus &
+menu-0-2 =
+manu-0-2-exec = scrot &
+
+label-open = 
+label-close = 
+label-separator =
+format-spacing = 5
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = 
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 1
+;label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %icon%
+label-focused-foreground = #00adfe
+;label-focused-background = #dadada
+;label-focused-underline = #fba922
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-padding = 4
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 4
+
+; Separator in between workspaces
+;label-separator = |
+;label-separator-padding = 2
+;label-separator-foreground = #ffb52a
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = ""
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-background = #9D2933
+;format-underline =  #C91F37
+label =  %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #C93756 
+;format-background = #26A65B
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 1.0
+content = X
+;click-left = nm-connection-editor
+format-connected = <ramp-signal> <label-connected>
+;format-connected-underline = #9f78e1
+;format-connected-background = #EA7455
+;label-connected =  %essid%
+label-connected = %{A1:nm-connection-editor:} %essid%%{A}
+
+;format-disconnected =
+format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected =
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = ﰐ
+ramp-signal-1 = ﰑ
+ramp-signal-2 = ﰒ
+ramp-signal-3 = ﰓ
+ramp-signal-4 = ﰔ
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/eth]
+type = internal/network
+interface = eno1
+interval = 1.0
+
+;format-connected-underline = #C91F37
+format-connected-prefix = " "
+;format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-background = #9D2933
+label-connected =  %local_ip% 
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+[module/speed_upload]
+type = internal/network
+interface = enp0s16u2
+interval = 1.0
+
+format-connected-underline = #875F9A
+;format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-background = #75433D
+
+label-connected =  %upspeed% 
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/speed_download]
+type = internal/network
+interface = enp4s0f2
+interval = 1.0
+
+format-connected-underline =  #8D608C
+;format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-background = #75433D
+
+label-connected =  %downspeed%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+
+
+
+[module/speed_wlan]
+type = internal/network
+interface = wlp9s0
+interval = 1.0
+
+;format-connected-underline = #55aa55
+;format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-background = #75433D
+
+label-connected =  %upspeed%  %downspeed%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix =""
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-underline = #0a6cf5
+;format-background = #DC3023
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume =  Volume %percentage%%
+;label-volume-foreground = ${root.foreground}
+label-volume-underline =  #4B77BE
+
+label-muted =  Muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 
+bar-volume-fill = 
+bar-volume-fill-font = 
+bar-volume-empty = 
+bar-volume-empty-font = 
+;bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini0

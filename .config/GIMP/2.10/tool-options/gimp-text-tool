@@ -1,0 +1,10 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 0.662745 0.725490 0.674510))
+(palette "Color History")
+(font "Source Han Sans SC Heavy")
+(font-size 57.000000)
+(justify center)
+(box-mode fixed)
+
+# end of gimp-text-tool options
