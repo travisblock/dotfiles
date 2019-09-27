@@ -10,6 +10,8 @@ theme : arc-dark
 
 dockbarx
 
+ncmpcpp 
+
 -------------------------
 screenshoot
 
