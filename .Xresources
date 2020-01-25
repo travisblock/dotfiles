@@ -1,0 +1,111 @@
+Xft.dpi:        85
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    false
+Xft.hintstyle: hintslight
+
+URxvt.font: xft:Iosevka:size=12
+Emacs.font: Hack-11
+XTerm.vt100.faceName: Hack:size=11
+
+URxvt.imLocale: pl_PL.UTF-8
+URxvt*allow_bold:true
+URxvt*iso14755: False
+
+*background: #2F343F
+*foreground: #EFF0EB
+
+! black
+*color0: #2F343F
+*color8: #444A57
+
+! red
+*.color1:	#de8990
+*.color9:	#d0a8ab
+
+! green
+*.color2:	#94daa9
+*.color10:	#bae8d2
+
+! yellow
+*.color3:	#dee7aa
+*.color11:	#d7c96b
+
+! blue
+*.color4:	#9cdbdf
+*.color12:	#6cb4dd
+
+! magenta
+*.color5:	#cca8c9
+*.color13:	#db79bf
+
+! cyan
+*.color6:	#9ad4c8
+*.color14:	#59b0b2
+
+! white
+*.color7:	#e1e1e1
+*.color15:	#fde8c2
+
+
+URxvt.perl-ext-common:			default,matcher,clipboard
+!URxvt.matcher.button:			1
+URxvt.perl-ext:				default,url-select
+URxvt.keysym.M-u:			perl:url-select:select_next
+URxvt.url-select.launcher:		firefox
+URxvt.url-select.underline:		true
+URxvt.insecure: 			false
+URxvt.keysym.Shift-Control-C: 			perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: 			perl:clipboard:paste
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt*saveLines: 			300000
+URxvt.scrollBar: 			false
+URxvt*cursorBlink: 			true
+URxvt*cursorUnderline: 		        true
+URxvt.tabbedex.autohide:		yes
+URxvt.tabbedex.tabbar-fg:		2
+URxvt.tabbedex.tabbar-bg:		0
+URxvt.tabbedex.tab-fg:			10
+URxvt.tabbedex.tab-bg:			0
+URxvt.tabbedex.title:			yes
+URxvt.tabbedex.new-button:		no
+URxvt*geometry: 77x12
+URxvt.internalBorder: 20
+
+
+!XTerm*letterSpace:-1
+!XTerm*faceName: iosevka Nerd Font
+!xterm*faceSize: 9
+!xterm*internalBorder: 20
+!xterm*vt100*geometry: 70x20
+!xterm*saveLines: 16384
+!xterm*loginShell: true
+!xterm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48
+!xterm*termName: xterm-color
+!xterm*eightBitInput: false
+
+UXTerm*termName: xterm-256color
+UXTerm*VT100.geometry:     76x17
+UXTerm*faceName:               ShureTechMono Nerd Font
+UXTerm*faceSize:		   9
+UXTerm*dynamicColors:      true
+UXTerm*utf8:               2
+UXTerm*eightBitInput:      true
+UXTerm*saveLines:          10000
+UXTerm*scrollKey:          true
+UXTerm*scrollTtyOutput:    false
+UXTerm*scrollBar:          false
+UXTerm*rightScrollBar:     false
+UXTerm*jumpScroll:         true
+UXTerm*multiScroll:        true
+UXTerm*toolBar:            false
+UXTerm*boldMode: false
+UXTerm*colorBDMode: true
+UXTerm*colorBD: rgb:3f/3f/3f
+
+rofi.color-enabled: true
+rofi.color-window: #2F343F, #2F343F, #2F343F
+rofi.color-normal: #2F343F, #ffffff, #2F343F, #268bd2, #2F343F
+rofi.color-active: #2F343F, #268bd2, #2F343F, #268bd2, #205171
+rofi.color-urgent: #2F343F, #f3843d, #2F343F, #268bd2, #ffc39c
